@@ -15,7 +15,7 @@ Hence I created this environment.
 - Create a user in the `sudo` group
 - As this user do (this takes a hour or so):
 
-	git clone --recursive https://github.com/hilbix/pi-boot.git
-	pi-boot/.setup
-	pi-boot/.x
+        git clone --recursive https://github.com/hilbix/pi-boot.git
+        pi-boot/.setup
+        pi-boot/.x
 
