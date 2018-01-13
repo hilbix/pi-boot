@@ -1,0 +1,17 @@
+#!/bin/bash
+
+OOPS() { printf OOPS:; printf ' %q' "$@"; printf '\n'; exit 23; }
+o() { "$@" || OOPS exec $?: "$@"; }
+
+o cd rpi23-gen-image
+
+BASEDIR="$1/image"			\
+KERNELSRC_DIR="$1/kernel-pi"		\
+RPI_FIRMWARE_DIR="$1/firmware-pi"	\
+UBOOTSRC_DIR="$1/u-boot"		\
+APT_PROXY="http://192.168.93.8:3142/"	\
+RPI_MODEL=3				\
+RELEASE=jessie				\
+BUILD_KERNEL=true			\
+./rpi23-gen-image.sh
+

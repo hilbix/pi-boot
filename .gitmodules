@@ -1,0 +1,18 @@
+[submodule "firmware"]
+	path = firmware
+	url = https://github.com/raspberrypi/firmware.git
+[submodule "kernel"]
+	path = kernel
+	url = https://github.com/raspberrypi/linux.git
+[submodule "wlan"]
+	path = wlan
+	url = https://github.com/rpi-distro/firmware-nonfree.git
+[submodule "video"]
+	path = video
+	url = https://github.com/ssvb/xf86-video-fbturbo.git
+[submodule "u-boot"]
+	path = u-boot
+	url = git://git.denx.de/u-boot.git
+[submodule "rpi23-gen-image"]
+	path = rpi23-gen-image
+	url = https://github.com/hilbix/rpi23-gen-image.git
