@@ -5,7 +5,7 @@ o() { "$@" || OOPS exec $?: "$@"; }
 
 o cd "`dirname -- "$0"`/rpi23-gen-image"
 
-rm -rf "$1/image"
+rm -rf "$1/image/build"
 
 export BASEDIR="$1/image"
 export KERNELSRC_DIR="$1/kernel"
