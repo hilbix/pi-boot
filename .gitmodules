@@ -12,7 +12,7 @@
 	url = https://github.com/ssvb/xf86-video-fbturbo.git
 [submodule "u-boot"]
 	path = u-boot
-	url = git://git.denx.de/u-boot.git
+	url = https://github.com/u-boot/u-boot.git
 [submodule "rpi23-gen-image"]
 	path = rpi23-gen-image
 	url = https://github.com/hilbix/rpi23-gen-image.git
