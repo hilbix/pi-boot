@@ -1,3 +1,12 @@
+# BIG FAT WARNING
+
+THE CREATED IMAGE WILL DESTROY YOUR MICRO-SD-CARD!
+
+The combination of systemd and syslog writes an such enourmous amount of data to the SD-card,
+that, within days, the number of writes of the SD-Card are maxed out.
+
+YOU HAVE BEEN WARNED!
+
 # Experiment to create Raspberry PI 3 boot image
 
 There is `rpi23-gen-image.sh` to create a boot image for Raspberry PI.
