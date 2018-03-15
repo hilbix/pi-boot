@@ -1,11 +1,16 @@
 # BIG FAT WARNING
 
-THE CREATED IMAGE WILL DESTROY YOUR MICRO-SD-CARD!
+I AM VERY SORRY TO TELL YOU, THAT THE CREATED IMAGE WILL DESTROY YOUR MICRO-SD-CARD VERY FAST!
 
 The combination of systemd and syslog writes an such enourmous amount of data to the SD-card,
-that, within days, the number of writes of the SD-Card are maxed out.
+that, within days, the possible number of writes to the SD-Card are reached.
+THIS EFFECTIVELY DESTROYS YOUR SD-CARD!
 
-YOU HAVE BEEN WARNED!
+Good SD-Cards stay readonly after that point, so you can recover your last data.
+But normal SD-Cards (like most of the expensive premium cards which are advertised as "extraordinary durable")
+just die at that point compleely and all your data will be gone forever with no chance for recovery, ever.
+
+YOU HAVE BEEN WARNED!  (YMMV, if you are lucky)
 
 # Experiment to create Raspberry PI 3 boot image
 
