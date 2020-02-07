@@ -12,6 +12,9 @@ just die at that point compleely and all your data will be gone forever with no 
 
 YOU HAVE BEEN WARNED!  (YMMV, if you are lucky)
 
+> Note that there are now SD cards which work like an SSD with wear levelling and a high write count.
+> These cards probably can sustain the load of this image.
+
 # Experiment to create Raspberry PI 3 boot image
 
 There is `rpi23-gen-image.sh` to create a boot image for Raspberry PI.
