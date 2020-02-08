@@ -3,20 +3,56 @@
 OOPS() { printf OOPS:; printf ' %q' "$@"; printf '\n'; exit 23; }
 o() { "$@" || OOPS exec $?: "$@"; }
 
-o cd "`dirname -- "$0"`/rpi23-gen-image"
+o cd "$(dirname -- "$0")/rpi23-gen-image"
+
+o test -d "$1/bin"
+o test -x "$1/bin/wget"
 
 rm -rf "$1/image/build"
 
 export BASEDIR="$1/image"
-export KERNELSRC_DIR="$1/kernel"
-export UBOOTSRC_DIR="$1/u-boot"
-export FBTURBOSRC_DIR="$1/video"
-export RPI_FIRMWARE_DIR="$1/firmware"
-export WLAN_FIRMWARESRC_DIR="$1/wlan"
+#export KERNELSRC_DIR="$1/kernel"
+#export UBOOTSRC_DIR="$1/u-boot"
+#export FBTURBOSRC_DIR="$1/video"
+#export RPI_FIRMWARE_DIR="$1/firmware"
+#export WLAN_FIRMWARESRC_DIR="$1/wlan"
 export APT_PROXY="http://127.0.0.1:3142/"
-export RPI_MODEL=3
-export RELEASE=jessie
+
+export RPI_MODEL=4
+
+export RELEASE=buster
 export BUILD_KERNEL=true
 
+export	ENABLE_SOUND=true
+export	ENABLE_WIRELESS=true
+export	ENABLE_BLUETOOTH=true
+export	ENABLE_FBTURBO=true
+export	ENABLE_VIDEOCORE=true
+export	ENABLE_I2C=true
+export	ENABLE_SPI=true
+export	ENABLE_HWRANDOM=true
+
+export	ENABLE_UBOOT=true
+export	ENABLE_INITRAMFS=true
+export	ENABLE_IFNAMES=true
+export	ENABLE_IPTABLES=true
+export	ENABLE_PRINTK=true
+export	ENABLE_CONSOLE=true
+export	ENABLE_IPV6=true
+export	ENABLE_SSHD=true
+export	SSH_ENABLE_ROOT=true
+export	ENABLE_USER=false
+export	ENABLE_ROOT=true
+
+export	ENABLE_NONFREE=true
+export	ENABLE_MINBASE=true
+
+export	ENABLE_XORG=false
+
+export	ENABLE_SPLASH=false
+export	ENABLE_SLASH=false
+export	ENABLE_LOGO=false
+
+export PATH="$1/bin:$PATH"
 o ./rpi23-gen-image.sh
 
