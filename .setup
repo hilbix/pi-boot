@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install etckeeper
-sudo apt-get purge nano
-sudo apt-get install debootstrap debian-archive-keyring qemu-user-static binfmt-support dosfstools rsync bmap-tools whois git bc psmisc dbus sudo vim crossbuild-essential-armhf apt-cacher-ng gawk
+sudo apt-get "$@" install etckeeper
+sudo apt-get "$@" purge nano
+sudo apt-get "$@" install debootstrap debian-archive-keyring qemu-user-static binfmt-support dosfstools rsync bmap-tools whois git bc psmisc dbus sudo vim crossbuild-essential-armhf apt-cacher-ng gawk bison flex libssl-dev
 
