@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Our very own wget wrapper
+
+LOG() { { printf '%(%F %T)T'; printf ' %q' "$@"; printf '\n'; } >>/tmp/wget.log; }
+OOPS() { LOG OOPS: "$@"; kill $PPID; exit 23; }
+o() { "$@" || OOPS exec $?: "$@"; }
+
+ARGS=()
+while	case "$1" in
+	(-[qc])	ARGS+=("$1");;
+	(-O)	ARGS+=("$1" "$2"); shift;;
+	(-*)	OOPS unsupported option "$1";;
+	(--)	ARGS+=(--); shift; false;;
+	(*)	false;;
+	esac
+do
+	shift || OOPS too few args: "${ARGS[@]}"
+done
+
+URL="$1"
+shift || OOPS incomplete arguments: "${ARGS[@]}"
+ARGS+=("$URL")
+shift && OOPS too many arguments: "${ARGS[@]}" "$@"
+
+LOG "${ARGS[@]}"
+
+case "$URL" in
+(http://ftp.debian.org/*)	exec /usr/bin/wget "${ARGS[@]}";;
+esac
+
+OOPS not yet implemented "${ARGS[@]}"
+
