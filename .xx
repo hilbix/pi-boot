@@ -54,5 +54,5 @@ export	ENABLE_SLASH=false
 export	ENABLE_LOGO=false
 
 export PATH="$1/bin:$PATH"
-o ./rpi23-gen-image.sh
+o nice -99 ionice -c3 ./rpi23-gen-image.sh
 
