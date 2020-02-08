@@ -1,3 +1,5 @@
+> **THIS CURRENTLY DOES NOT WORK FOR UNKNOWN REASON** (the created image does not boot)
+
 # BIG FAT WARNING
 
 I AM VERY SORRY TO TELL YOU, THAT THE CREATED IMAGE WILL DESTROY YOUR MICRO-SD-CARD VERY FAST!
@@ -34,15 +36,47 @@ Hence I created this environment to fix the bugs.
 
 # How to use
 
-> This currently might be incomplete
+> This currently is not complete
 
 - Create a VM with a minimal Debian install
 - as `root`: `apt-get install etckeeper; apt-get install sudo`
+- Have a good web cache reachable on 127.0.0.1:3142 within the VM
 - Extend `/home` to 20 GB (minimum)
 - Create a user in the `sudo` group
-- As this user do (this takes a hour or so):
+- As this user, do (this takes a hour or so):
 
         git clone --recursive https://github.com/hilbix/pi-boot.git
         pi-boot/.setup
         pi-boot/.x
 
+- Afterwards you have the image in `image/YYYY-MM-DD-arm-CURRENT-rpi*-*-armhf.img`
+- Write this image to your Micro-SD-card
+  - `dd if=image/YYYY-MM-DD-arm-CURRENT-rpi*.img of=/dev/sdX`
+  - **BE VERY CARFUL TO REALLY USE THE RIGHT /dev/sdX, because if you use the wrong one you destroy something unconditionally forever!**
+- `sync`
+- Pull the card and put it into the PI
+- Power on the PI
+
+That's it
+
+# Missing links
+
+- Get it booting
+  - Long ago it once booted, but no more ..
+
+- This is far too complex
+  - Creating a VM is too complex
+  - Setting up the VM is too complex
+  - Configuring everything is too complex
+  - Writing the image to the card is too complex
+
+- Aftermath is too complex, too
+  - The PI is booted
+  - You need to connect to it somehow
+  - You need to configure it .. again like the VM
+  - There is no way to save the state (backup is missing)
+
+- Also you cannot easily reproduce things bit-by-bit.  
+  - This means: Tomorrow, in a year, in 10 years from now, or even in 100 years.
+  - This also means:  Without something wich might no more available then, like GitHub, Debian archive, etc.
+)
