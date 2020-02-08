@@ -20,7 +20,17 @@ YOU HAVE BEEN WARNED!  (YMMV, if you are lucky)
 There is `rpi23-gen-image.sh` to create a boot image for Raspberry PI.
 But I think it is far too complex to use from scratch.
 
-Hence I created this environment.
+Also it is a security nightmare, as it downloads unauthenticated binary blobs from unauthenticated sources over insecure Internet.
+A complete no-go.  Everything must be authenticated.
+
+> Note that the Debian download is authenticated by Debian signatures.
+
+Hence I created this environment to fix the bugs.
+
+> Yes, this still needs networking to download the Debian install.
+> But it wraps every unauthenticated binary download into some git submodule of the unauthenticated source.
+> git is used to track the contents, hence the content is not neccesarily authentic, but nevertheless approved.
+
 
 # How to use
 
